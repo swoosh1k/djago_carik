@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+</head>
+<body>
+<h1>Заказ машины:</h1>
+<h1>{{car.mark}}</h1>
+<h1>{{car.year}}</h1>
+<h1>{{car.description}}</h1>
+
+
+<form action = "{% url 'add_dop' car.id %}" method = 'post'>
+  {% csrf_token %}
+  {{form_1.as_p}}
+  {% if form_2 %}
+  {{form_2.as_p}}
+  {% endif %}
+    <button type = 'submit'>Отправить в корзину</button>
+</form>
+
+
+</body>
+</html>

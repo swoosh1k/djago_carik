@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+</head>
+<body>
+{% for car in cars %}
+
+<h1>{{car.mark}}</h1>
+<h1>{{car.description}}</h1>
+<h1>{{car.year}}</h1>
+<h1>{{car.color}}</h1>
+<h1>Цена</h1> <h1>{{car.price}}</h1>
+<a href = "{% url 'car_detail' car.pk %}">Заказать машину </a>
+{% endfor %}
+
+<a href ='{% url "add_car"  %}'>Добавить машину </a>
+
+</body>
+</html>
